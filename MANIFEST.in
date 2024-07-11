@@ -1,0 +1,5 @@
+include src/labs_sphinx_/theme.conf
+global-include *.html
+recursive-include src/labs_sphinx_theme/static/css *.css
+recursive-include src/labs_sphinx_theme/static/images *.svg *.ico *.png
+recursive-include src/labs_sphinx_theme/static/js *.js
