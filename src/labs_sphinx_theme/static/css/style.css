@@ -4,7 +4,7 @@
 html[data-theme="light"] {
   --pst-color-primary: #154A72;  /* logo blue */
   --pst-color-primary-highlight: #151B72; /* purpler shade of logo blue */
-  --pst-color-secondary: #40611F; /* darker shade of logo green */
+  --pst-color-secondary: #81C240; /* logo green */
   --pst-color-secondary-highlight: #40C240; /* greener shade of logo green */
   --pst-color-secondary-bg: #CDDEBB; /* color secondary mixed with white, should be close to white */
   --pst-color-table-row-hover-bg: #81C240; /* logo green */
