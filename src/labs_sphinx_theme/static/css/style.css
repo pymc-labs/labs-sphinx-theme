@@ -15,7 +15,7 @@ html[data-theme="dark"] {
   --pst-color-primary: #4A9EDE;  /* lighter shade of logo blue */
   --pst-color-primary-highlight: #15726C; /* greener shade of logo blue */
   --pst-color-secondary: #81C240; /* logo green */
-  --pst-color-secondary-highlight: #40C240; /* yellower shade of logo green */
+  --pst-color-secondary-highlight: #C2C240; /* yellower shade of logo green */
   --pst-color-secondary-bg: #2b4115; /* color secondary mixed with black, should be close to black */
   --pst-color-table-row-hover-bg: #40611F; /* darker shade of logo green */
 }
