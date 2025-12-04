@@ -5,7 +5,7 @@
   {%- if translations %}
     {% set file_path = pagename + '.html' %}
     {%- for lang in translations %}
-    <link rel="alternate" hreflang="en" href="{{ baseurl }}/{{ lang }}/{{ file_path }}" />
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ baseurl }}/{{ lang }}/{{ rtd_version }}/{{ file_path }}" />
     {%- endfor %}
   {% endif %}
 {%- endblock extrahead %}
