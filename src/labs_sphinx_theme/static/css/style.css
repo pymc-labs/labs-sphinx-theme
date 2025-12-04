@@ -55,10 +55,6 @@ html[data-theme="dark"] {
   text-decoration: none;
 }
 
-tr a:hover {
-  color: var(--pst-color-primary-highlight);
-}
-
 .navbar-brand img {
   height: 100%;
   max-width: 40vw;
