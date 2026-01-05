@@ -14,7 +14,6 @@ secondary_sidebar_items = [
   "page-toc.html",
   "searchbox.html",
   "edit-this-page.html",
-  "sourcelink.html",
   "contact.html"
 ]
 search_bar_text = "Search..."
