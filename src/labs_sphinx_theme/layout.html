@@ -1,11 +1,25 @@
 {%- extends "pydata_sphinx_theme/layout.html" %}
 {%- block extrahead %}
   {{ super() }}
-  <link rel="canonical" href="{{ baseurl }}/{{ language }}/stable/{{ pagename }}.html">
-  {%- if translations %}
-    {% set file_path = pagename + '.html' %}
-    {%- for lang in translations %}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ baseurl }}/{{ lang }}/{{ rtd_version }}/{{ file_path }}" />
-    {%- endfor %}
-  {% endif %}
+  {%- if baseurl %}
+    {#- Tolerate a trailing slash in baseurl: unnormalized, it yields double-slash
+        canonicals (e.g. https://example.com//en/stable/...) that search engines
+        treat as broken and refuse to index. #}
+    {%- set canonical_base = baseurl.rstrip('/') %}
+    {#- Canonicalize index pages to the directory URL, which is how they are
+        linked and served, rather than the duplicate .../index.html form. #}
+    {%- if pagename == 'index' %}
+      {%- set page_path = '' %}
+    {%- elif pagename.endswith('/index') %}
+      {%- set page_path = pagename[:-5] %}
+    {%- else %}
+      {%- set page_path = pagename + '.html' %}
+    {%- endif %}
+  <link rel="canonical" href="{{ canonical_base }}/{{ language }}/stable/{{ page_path }}">
+    {%- if translations %}
+      {%- for lang in translations %}
+  <link rel="alternate" hreflang="{{ lang }}" href="{{ canonical_base }}/{{ lang }}/{{ rtd_version }}/{{ page_path }}" />
+      {%- endfor %}
+    {%- endif %}
+  {%- endif %}
 {%- endblock extrahead %}
